@@ -503,7 +503,7 @@ Bundle 'Glench/Vim-Jinja2-Syntax'
 " Bundle 'ap/vim-css-color'
 
 " 这个有坑, see issue https://github.com/wklken/k-vim/issues/49
-"Bundle 'gorodinskiy/vim-coloresque'
+Bundle 'gorodinskiy/vim-coloresque'
 
 "###### nginx #########
 Bundle 'evanmiller/nginx-vim-syntax'
