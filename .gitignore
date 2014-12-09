@@ -1,0 +1,6 @@
+*~
+~.bak
+*.py[co]
+bundle/*
+notice
+err.log
