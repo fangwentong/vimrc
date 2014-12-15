@@ -427,7 +427,7 @@ endfunc
 if has("gui_running")
     set guifont=Monaco:h15   "Mac OS X
     if has("gui_gtk2")       "GTK2
-        set guifont=Monaco\ 12, Monospace\ 12
+        set guifont=Monaco\ 12,Monospace\ 12
     endif
     set guioptions-=T
     set guioptions+=e

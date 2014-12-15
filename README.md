@@ -1,7 +1,10 @@
 My vimrc
 ---
 
-这是我的vim配置
+这是我的vim配置，配置大量参考了项目 [wklen/k-vim](https://github.com/wklken/k-vim),
+那里有比较完整的插件演示与介绍.
+
+更多我的`Linux`配置参见 [fangwentong/dotfiles](https://github.com/fangwentong/dotfiles).
 
 
 ### 安装
