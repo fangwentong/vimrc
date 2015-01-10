@@ -66,7 +66,7 @@ link_vimrc() {
     echo "\033[34m* Setting up symlinks...\033[0m"
     ln -s $BASE_DIR/vimrc $HOME/.vimrc
     ln -s $BASE_DIR/vimrc.bundles $HOME/.vimrc.bundles
-    ln -s $BASE_DIR/ $HOME/.vim
+    ln -s $BASE_DIR $HOME/.vim
 }
 
 # Install Plugins

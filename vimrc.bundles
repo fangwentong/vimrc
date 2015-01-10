@@ -486,7 +486,6 @@ Bundle 'nono/jquery.vim'
 
 "###### emmet HTML complete #########
 Bundle "mattn/emmet-vim"
-let g:user_emmet_mode="n"
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-Y>'
@@ -502,13 +501,11 @@ Bundle 'Glench/Vim-Jinja2-Syntax'
 "not work in iterm2 which termianl selection is not xterm-256
 " Bundle 'ap/vim-css-color'
 
-" 这个有坑, see issue https://github.com/wklken/k-vim/issues/49
 Bundle 'gorodinskiy/vim-coloresque'
 
 "###### nginx #########
 Bundle 'evanmiller/nginx-vim-syntax'
 
-" 待审查
 " Bundle "thinca/vim-quickrun"
 " nnoremap <F10> :QuickRun<cr>
 

@@ -34,11 +34,6 @@ set nocompatible
 set autoread                " 文件修改之后自动载入。
 set shortmess=atI           " 启动的时候不显示那个援助索马里儿童的提示
 
-" 备份,到另一个位置. 防止误删, 目前是取消备份
-"set backup
-"set backupext=.bak
-"set backupdir=/tmp/vimbk/
-
 set nobackup                " 取消备份。 视情况自己改
 set noswapfile              " 关闭交换文件
 
@@ -47,7 +42,7 @@ if has('persistent_undo')
   set undolevels=1000         " How many undos
   set undoreload=10000        " number of lines to save for undo
   set undofile                " So is persistent undo ...
-  set undodir=/tmp/vimundo/
+  set undodir=/tmp/vimundo
 endif
 
 set cursorcolumn            " 突出显示当前行等 不喜欢这种定位可注解
@@ -80,7 +75,6 @@ set tm=500
 " Show 展示/排版等界面格式设置
 "==========================================
 
-
 set ruler               "显示当前的行号列号：
 set showcmd             "在状态栏显示正在输入的命令
 set showmode            "Show current mode
@@ -91,7 +85,6 @@ set scrolloff=7
 " 命令行（在状态行下）的高度，默认为1，这里是2
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 set laststatus=2
-
 
 set number                    "显示行号：
 set nowrap                    " 取消换行。
@@ -193,15 +186,6 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-"删除多余空格
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-" func! DeleteTrailingWS()
-  " exe "normal mz"
-  " %s/\s\+$//ge
-  " exe "normal `z"
-" endfunc
-" autocmd BufWrite *.py :call DeleteTrailingWS()
 
 " Remember info about open buffers on close"
 set viminfo^=%
