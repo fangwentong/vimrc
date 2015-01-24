@@ -182,6 +182,13 @@ inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 " Python 文件的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 
+" JavaScript 文件, 2个空格缩进
+autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType coffee set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType json set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType html set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType css set tabstop=2 shiftwidth=2 expandtab ai
+
 " if this not work ,make sure .viminfo is writable for you
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -398,6 +405,8 @@ func! CompileRun()
         exec "!chromium-browser % &"
     elseif &filetype == 'javascript'
         exec "!time node %"
+    elseif &filetype == 'coffee'
+        exec "!time coffee %"
     elseif &filetype == 'ruby'
         exec "!time ruby %"
     endif

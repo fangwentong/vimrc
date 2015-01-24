@@ -434,12 +434,9 @@ let g:tagbar_type_go = {
 \ }
 
 
-
-" 去除taglist =>原因: 使用tagbar和ctrlp-funky可以直接快速跳转函数和变量位置,taglist有些多余
-
 "################### 语言相关 ###################
 
-"###### Python #########
+"######################### Python #############################
 
 " python fly check, 弥补syntastic只能打开和保存才检查语法的不足
 Bundle 'kevinw/pyflakes-vim'
@@ -449,25 +446,10 @@ let g:pyflakes_use_quickfix = 0
 Bundle 'hdima/python-syntax'
 let python_highlight_all = 1
 
-"###### Golang #########
-" 1.install golang and install gocode 'go get github.com/nsf/gocode'
-" 2.make sure gocode in your path: `which gocode` (add $GOPATH/bin to you $PATH)
-Bundle 'Blackrush/vim-gocode'
-"Bundle 'fatih/vim-go.git'
+" Jinja2
+Bundle 'Glench/Vim-Jinja2-Syntax'
 
-"###### Ruby #########
-" Bundle 'vim-ruby/vim-ruby'
-" Bundle 'nelstrom/vim-textobj-rubyblock'
-
-" 有bug, 和当前有冲突, 尚未解决, 不要打开
-" Bundle 'tpope/vim-endwise'
-
-
-"###### Markdown #########
-Bundle 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled=1
-
-"###### HTML/JS/JQUERY/CSS #########
+"####################### JavaScript ##########################
 
 " for javascript  注意: syntax这个插件要放前面
 Bundle 'jelera/vim-javascript-syntax'
@@ -476,34 +458,38 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-
-" for javascript 自动补全,配合YCM,需要安装nodejs&npm  see
-" https://github.com/marijnh/tern_for_vim
+"JavaScript 补全 https://github.com/marijnh/tern_for_vim
 Bundle 'marijnh/tern_for_vim'
 
 "for jquery
 Bundle 'nono/jquery.vim'
 
-"###### emmet HTML complete #########
+" CoffeeScript https://github.com/kchmck/vim-coffee-script/
+Plugin 'kchmck/vim-coffee-script'
+
+"####################### HTML/CSS ##########################
+" emmet
 Bundle "mattn/emmet-vim"
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-Y>'
 
-"###### vim.less : less 自动更新##########
-" Bundle 'groenewege/vim-less'
-" autocmd BufWritePost *.less :!lessc % > %:p:r.css
-
-"###### Jinja2 #########
-Bundle 'Glench/Vim-Jinja2-Syntax'
-
-"for css color
-"not work in iterm2 which termianl selection is not xterm-256
-" Bundle 'ap/vim-css-color'
-
+" CSS color
 Bundle 'gorodinskiy/vim-coloresque'
 
-"###### nginx #########
+" vim-less
+Bundle 'groenewege/vim-less'
+
+
+"####################### MarkDown ##########################
+Bundle 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
+
+
+" ###### nginx #########
+"################### 配置文件高亮插件 #######################
+
+"nginx
 Bundle 'evanmiller/nginx-vim-syntax'
 
 " Bundle "thinca/vim-quickrun"

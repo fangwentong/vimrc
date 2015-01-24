@@ -102,6 +102,7 @@ install_vim
 link_vimrc
 install_plugins
 compile_ycm
+cd ~/.vim/bundle/tern_for_vim && npm install
 # Vim configure complete
 echo "\033[034m* Vim Configure completed!\033[0m"
 ################ End ###########################
