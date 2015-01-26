@@ -467,6 +467,9 @@ Bundle 'nono/jquery.vim'
 " CoffeeScript https://github.com/kchmck/vim-coffee-script/
 Plugin 'kchmck/vim-coffee-script'
 
+" Express jade模版高亮 https://github.com/digitaltoad/vim-jade
+Plugin 'digitaltoad/vim-jade'
+
 "####################### HTML/CSS ##########################
 " emmet
 Bundle "mattn/emmet-vim"
@@ -485,8 +488,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
-
-" ###### nginx #########
 "################### 配置文件高亮插件 #######################
 
 "nginx

@@ -85,6 +85,15 @@ install_plugins() {
     rm $BASE_DIR/notice
 }
 
+javascript_tern_config() {
+    cd ~/.vim/bundle/tern_for_vim && npm install
+    ln -sf $BASE_DIR/conf/tern-project $HOME/.tern-project
+}
+
+plugins_configure() {
+    javascript_tern_config
+}
+
 # Compile YouCompleteMe
 compile_ycm() {
     echo "\033[034m* Compiling YouCompleteMe...\033[0m"
@@ -101,8 +110,8 @@ compile_ycm() {
 install_vim
 link_vimrc
 install_plugins
+plugins_configure
 compile_ycm
-cd ~/.vim/bundle/tern_for_vim && npm install
 # Vim configure complete
 echo "\033[034m* Vim Configure completed!\033[0m"
 ################ End ###########################
