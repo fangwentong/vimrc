@@ -337,6 +337,7 @@ map Y y$
 
 "新建某些类型文件时，自动插入相应文件头
 autocmd BufNewFile  *.sh,*.py  exec ":call SetTitle()"
+autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 
 "定义函数SetTitle，自动插入文件头
 func! SetTitle ()
@@ -438,6 +439,10 @@ endif
 colorscheme solarized
 set background=dark
 set t_Co=256
+
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr

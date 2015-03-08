@@ -1,7 +1,9 @@
 {
   "libs": [
     "browser",
-    "jquery"
+    "jquery",
+    "node",
+    "express"
   ],
   "loadEagerly": [
     "importantfile.js"
