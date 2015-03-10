@@ -1,14 +1,14 @@
 {
   "libs": [
     "browser",
-    "jquery",
-    "node",
-    "express"
+    "jquery"
   ],
   "loadEagerly": [
     "importantfile.js"
   ],
   "plugins": {
+    "node": {},
+    "complete_strings": {},
     "requirejs": {
       "baseURL": "./",
       "paths": {}
