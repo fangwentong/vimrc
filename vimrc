@@ -138,7 +138,6 @@ set ttyfast
 " 00x增减数字时使用十进制
 set nrformats=
 
-
 "==========================================
 " file encode, 文件编码,格式
 "==========================================
@@ -215,7 +214,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " 设置快捷键将选中文本块复制至系统剪贴板
 "vnoremap <Leader>y "+y
 " 设置快捷键将系统剪贴板内容粘贴至 vim
-nmap <Leader>p "+p
+" nmap <Leader>p "+p
 " 定义快捷键关闭当前分割窗口
 nmap <Leader>q :q<CR>
 " 定义快捷键保存当前窗口内容
@@ -224,7 +223,6 @@ nmap <Leader>q :q<CR>
 "nmap <Leader>WQ :wa<CR>:q<CR>
 " 不做任何保存，直接退出 vim
 "nmap <Leader>Q :qa!<CR>
-
 
 "Treat long lines as break lines (useful when moving around in them)
 "se swap之后，同物理行上线直接跳
@@ -246,7 +244,6 @@ noremap <F1> <Esc>"
 nnoremap <F2> :set number! number?<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
-
 
 "use sane regexes"
 nnoremap / /\v
@@ -294,6 +291,7 @@ map <leader>tm :tabm<cr>
 " 新建tab  Ctrl+t
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
+
 " TODO: 配置成功这里, 切换更方便, 两个键
 " nnoremap <C-S-tab> :tabprevious<CR>
 " nnoremap <C-tab>   :tabnext<CR>

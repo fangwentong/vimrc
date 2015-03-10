@@ -264,7 +264,7 @@ nnoremap <leader>gs :GitGutterToggle<CR>
 
 " edit history, 可以查看回到某个历史状态
 Bundle 'sjl/gundo.vim'
-nnoremap <leader>h :GundoToggle<CR>
+" nnoremap <leader>h :GundoToggle<CR>
 
 "################### 显示增强 ###################
 
@@ -309,16 +309,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" 代码缩进
-" https://github.com/nathanaelkane/vim-indent-guides
-"Bundle 'nathanaelkane/vim-indent-guides'
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-"hi IndentGuidesOdd  guibg=red   ctermbg=3
-"hi IndentGuidesEven guibg=green ctermbg=4
-"hi IndentGuidesOdd  ctermbg=black
-"hi IndentGuidesEven ctermbg=darkgrey
 
 "################### 显示增强-主题 ###################"
 
@@ -361,27 +351,11 @@ let g:nerdtree_tabs_synchronize_focus=0
 " Vim Workspace Controller
 Bundle "szw/vim-ctrlspace"
 let g:airline_exclude_preview = 1
+let g:ctrlspace_default_mapping_key="<leader>z"
 hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
 hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
 hi CtrlSpaceSearch   guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
 hi CtrlSpaceStatus   guifg=#839496 guibg=#002b36 gui=reverse term=reverse cterm=reverse ctermfg=12 ctermbg=8
-
-
-"for minibufferexpl 去掉, 有需要同学的自己解开
-" Bundle 'fholgado/minibufexpl.vim'
-" let g:miniBufExplMapWindowNavVim = 1
-" let g:miniBufExplMapWindowNavArrows = 1
-" let g:miniBufExplMapCTabSwitchBufs = 1
-" let g:miniBufExplModSelTarget = 1
-" " 解决FileExplorer窗口变小问题
-" let g:miniBufExplForceSyntaxEnable = 1
-" let g:miniBufExplorerMoreThanOne=2
-" let g:miniBufExplCycleArround=1
-" " 默认方向键左右可以切换buffer
-" nnoremap <TAB> :MBEbn<CR>
-" noremap <leader>bn :MBEbn<CR>
-" noremap <leader>bp :MBEbp<CR>
-" noremap <leader>bd :MBEbd<CR>
 
 
 " 标签导航
@@ -473,8 +447,12 @@ Plugin 'digitaltoad/vim-jade'
 "####################### HTML/CSS ##########################
 " emmet
 Bundle "mattn/emmet-vim"
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+let g:user_emmet_mode='a' "enable all function in all mode.
+
+" Enable just for html/css
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+" 
 let g:user_emmet_leader_key='<C-Y>'
 
 " CSS color
@@ -493,7 +471,4 @@ let g:vim_markdown_folding_disabled=1
 "nginx
 Bundle 'evanmiller/nginx-vim-syntax'
 
-" Bundle "thinca/vim-quickrun"
-" nnoremap <F10> :QuickRun<cr>
-
-"------------------------------------------- end of configs --------------------------------------------
+"------------------------------------------- End of Configure --------------------------------------------
