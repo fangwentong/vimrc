@@ -323,6 +323,10 @@ let g:solarized_visibility="normal"
 Bundle 'tomasr/molokai'
 "let g:molokai_original = 1
 
+"tomorrow 主题
+Bundle "ChrisKempson/Vim-Tomorrow-Theme"
+
+
 
 "################### 快速导航 ###################
 "目录导航
@@ -409,6 +413,8 @@ let g:tagbar_type_go = {
 
 
 "################### 语言相关 ###################
+" https://github.com/sheerun/vim-polyglot 通用语法包 收集GitHub相关语法包
+Bundle 'sheerun/vim-polyglot'
 
 "######################### Python #############################
 
@@ -442,7 +448,7 @@ Bundle 'nono/jquery.vim'
 Plugin 'kchmck/vim-coffee-script'
 
 " Express jade模版高亮 https://github.com/digitaltoad/vim-jade
-Plugin 'digitaltoad/vim-jade'
+" Plugin 'digitaltoad/vim-jade'
 
 "####################### HTML/CSS ##########################
 " emmet
@@ -452,7 +458,7 @@ let g:user_emmet_mode='a' "enable all function in all mode.
 " Enable just for html/css
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css EmmetInstall
-" 
+"
 let g:user_emmet_leader_key='<C-Y>'
 
 " CSS color
@@ -466,9 +472,5 @@ Bundle 'groenewege/vim-less'
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
-"################### 配置文件高亮插件 #######################
-
-"nginx
-Bundle 'evanmiller/nginx-vim-syntax'
 
 "------------------------------------------- End of Configure --------------------------------------------

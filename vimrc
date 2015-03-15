@@ -397,13 +397,12 @@ func! CompileRun()
     elseif &filetype == 'python'
         exec "!time python %"
     elseif &filetype == 'html'
-        "exec "!firefox % &"
-        exec "!chromium-browser % &"
+        exec "!chrome % &"
     elseif &filetype == 'go'
         exec "!go build %<"
         exec "!time go run %"
     elseif &filetype == 'mkd' "MarkDown 解决方案为VIM + Chrome浏览器的MarkDown Preview Plus插件，保存后实时预览
-        exec "!chromium-browser % &"
+        exec "!chrome % &"
     elseif &filetype == 'javascript'
         exec "!time node %"
     elseif &filetype == 'coffee'
@@ -441,6 +440,11 @@ set t_Co=256
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
+
+" colorscheme tomorrow
+" colorscheme tomorrow-night
+" colorscheme tomorrow-night-eighties
+" colorscheme tomorrow-night-bright
 
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
