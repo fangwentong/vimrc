@@ -1,7 +1,10 @@
 {
   "libs": [
     "browser",
-    "jquery"
+    "jquery",
+    "underscore",
+    "backbone",
+    "requirejs"
   ],
   "loadEagerly": [
     "importantfile.js"

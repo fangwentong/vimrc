@@ -189,6 +189,9 @@ autocmd FileType html set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType css set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType yaml,jade set tabstop=2 shiftwidth=2 expandtab ai
 
+" Makefile 不使用空格替换tab
+autocmd FileType make set noexpandtab ai
+
 
 " if this not work ,make sure .viminfo is writable for you
 if has("autocmd")
@@ -244,6 +247,9 @@ noremap <F1> <Esc>"
 nnoremap <F2> :set number! number?<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
+set pastetoggle=<F6>      "    when in insert mode, press <F5> to go to
+                          "    paste mode, where you can paste mass data
+                          "    that won't be autoindented
 
 "use sane regexes"
 nnoremap / /\v
@@ -381,7 +387,7 @@ map <F5> :call CompileRun()<CR>
 func! CompileRun()
     exec "w"
     if &filetype == 'c'
-        exec "!g++ % -o %<"
+        exec "!gcc % -o %<"
         exec "!time ./%<"
         exec "!rm ./%<"
     elseif &filetype == 'cpp'

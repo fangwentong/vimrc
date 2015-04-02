@@ -264,7 +264,7 @@ nnoremap <leader>gs :GitGutterToggle<CR>
 
 " edit history, 可以查看回到某个历史状态
 Bundle 'sjl/gundo.vim'
-" nnoremap <leader>h :GundoToggle<CR>
+nnoremap <leader>h :GundoToggle<CR>
 
 "################### 显示增强 ###################
 
