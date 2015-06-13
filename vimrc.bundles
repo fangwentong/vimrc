@@ -2,12 +2,6 @@
 " bundle 插件管理和配置项
 "==========================================
 
-"------------------------------------------- begin of configs --------------------------------------------
-
-"################### 包依赖 #####################
-"package dependence:  ctags
-"python dependence:   pep8, pyflake
-
 "非兼容vi模式。去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 set nocompatible
 " configure Vundle
@@ -36,10 +30,10 @@ Bundle 'vimcn/vimcdoc'
 " 多语言语法检查
 Bundle 'scrooloose/syntastic'
 let g:syntastic_error_symbol='>>'
-let g:syntastic_warning_symbol='>'
+let g:syntastic_warning_symbol='!'
 let g:syntastic_check_on_open=1
-let g:syntastic_enable_highlighting = 0
-"let g:syntastic_python_checker="flake8,pyflakes,pep8,pylint"
+let g:syntastic_enable_highlighting = 1
+" let g:syntastic_python_checker="flake8,pyflakes,pep8,pylint"
 let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
 let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 let g:syntastic_html_checkers=['tidy', 'jshint']
@@ -72,8 +66,7 @@ let g:ycm_goto_buffer_command = 'horizontal-split'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
-
-"let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
+let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全
 
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
 " old version
@@ -95,15 +88,15 @@ let g:ycm_filetype_blacklist = {
 
 " https://github.com/nathanaelkane/vim-indent-guides
 " 代码缩进显示
-Bundle 'nathanaelkane/vim-indent-guides'
-" 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
-" 从第二层开始可视化显示缩进
-let g:indent_guides_start_level=2
-" 色块宽度
-let g:indent_guides_guide_size=1
-" 快捷键 i 开/关缩进可视化
-:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+" Bundle 'nathanaelkane/vim-indent-guides'
+" " 随 vim 自启动
+" let g:indent_guides_enable_on_vim_startup=1
+" " 从第二层开始可视化显示缩进
+" let g:indent_guides_start_level=2
+" " 色块宽度
+" let g:indent_guides_guide_size=1
+" " 快捷键 i 开/关缩进可视化
+" :nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
 " 代码片段快速插入 (snippets中,是代码片段资源,需要学习)
 Bundle 'SirVer/ultisnips'
@@ -144,6 +137,7 @@ let g:UltiSnipsJumpBackwordTrigger = "<c-k>"
 Bundle 'Raimondi/delimitMate'
 "" for python docstring ",优化输入
 au FileType python let b:delimitMate_nesting_quotes = ['"']
+au FileType python let b:delimitMate_nesting_quotes = ["'"]
 
 
 " 自动补全html/xml标签
@@ -228,7 +222,7 @@ Bundle 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
     \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
@@ -325,7 +319,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 "主题 solarized
 Bundle 'altercation/vim-colors-solarized'
-"let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
@@ -455,12 +449,6 @@ Bundle 'marijnh/tern_for_vim'
 "for jquery
 Bundle 'nono/jquery.vim'
 
-" CoffeeScript https://github.com/kchmck/vim-coffee-script/
-Plugin 'kchmck/vim-coffee-script'
-
-" Express jade模版高亮 https://github.com/digitaltoad/vim-jade
-" Plugin 'digitaltoad/vim-jade'
-
 "####################### HTML/CSS ##########################
 " emmet
 Bundle "mattn/emmet-vim"
@@ -474,9 +462,6 @@ let g:user_emmet_leader_key='<C-Y>'
 
 " CSS color
 Bundle 'gorodinskiy/vim-coloresque'
-
-" vim-less
-Bundle 'groenewege/vim-less'
 
 
 "####################### MarkDown ##########################

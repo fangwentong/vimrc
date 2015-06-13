@@ -186,6 +186,7 @@ autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType coffee set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType json set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType html set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType jinja set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType css set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType yaml,jade set tabstop=2 shiftwidth=2 expandtab ai
 
