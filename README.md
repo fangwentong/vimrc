@@ -6,12 +6,8 @@ My vimrc
 
 更多`Linux`配置参见 [fangwentong/dotfiles](https://github.com/fangwentong/dotfiles).
 
-
-
-
 ### 安装
 
 ```
 git clone https://github.com/fangwentong/vimrc.git vimrc && cd vimrc && sh install.sh
 ```
-

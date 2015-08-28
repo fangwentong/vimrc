@@ -18,13 +18,13 @@ install_debain() {
     sudo apt-get install -y clang cmake build-essential 2>> err.log
 
     # 解决Ubuntu 14.04编译YCM时找不到libclang.so的问题
-    if [ ! -e /usr/lib/llvm-3.4/lib/libclang.so ]
+    if [ ! -e /usr/lib/llvm-3.6/lib/libclang.so ]
     then
-        sudo ln -sf /usr/lib/llvm-3.4/lib/libclang.so.1 /usr/lib/llvm-3.4/lib/libclang.so
-    elif [ -L /usr/lib/llvm-3.4/lib/libclang.so ]
+        sudo ln -sf /usr/lib/llvm-3.6/lib/libclang.so.1 /usr/lib/llvm-3.6/lib/libclang.so
+    elif [ -L /usr/lib/llvm-3.6/lib/libclang.so ]
     then
-        sudo unlink /usr/lib/llvm-3.4/lib/libclang.so
-        sudo ln -sf /usr/lib/llvm-3.4/lib/libclang.so.1 /usr/lib/llvm-3.4/lib/libclang.so
+        sudo unlink /usr/lib/llvm-3.6/lib/libclang.so
+        sudo ln -sf /usr/lib/llvm-3.6/lib/libclang.so.1 /usr/lib/llvm-3.6/lib/libclang.so
     fi
 
     sudo apt-get install -y vim ctags 2>> err.log
