@@ -18,14 +18,18 @@ install_debain() {
     sudo apt-get install -y clang cmake build-essential 2>> err.log
 
     # 解决Ubuntu 14.04编译YCM时找不到libclang.so的问题
-    if [ ! -e /usr/lib/llvm-3.6/lib/libclang.so ]
-    then
-        sudo ln -sf /usr/lib/llvm-3.6/lib/libclang.so.1 /usr/lib/llvm-3.6/lib/libclang.so
-    elif [ -L /usr/lib/llvm-3.6/lib/libclang.so ]
-    then
-        sudo unlink /usr/lib/llvm-3.6/lib/libclang.so
-        sudo ln -sf /usr/lib/llvm-3.6/lib/libclang.so.1 /usr/lib/llvm-3.6/lib/libclang.so
-    fi
+    for CLANG_VERSION in 3.9 3.8 3.7 3.6 3.5 3.4 3.3 3.2 3.1
+    do
+        if [ ! -e /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so ] && [ -e /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so.1 ]
+        then
+            sudo ln -sf /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so.1 /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so
+            echo "Here"
+        elif [ -L /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so ]
+        then
+            sudo unlink /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so
+            sudo ln -sf /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so.1 /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so
+        fi
+    done
 
     sudo apt-get install -y vim ctags 2>> err.log
     sudo apt-get install -y python-dev python-setuptools 2>> err.log
@@ -45,7 +49,8 @@ install_fedora() {
 
 install_vim() {
     echo "\033[034m* Installing vim...\033[0m"
-    if [ `which brew` ]
+    SYSTEM=`uname -s`
+    if [ $SYSTEM = "Darwin" ]
     then
         install_mac_os
     elif [ `which apt-get` ]

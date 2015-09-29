@@ -189,6 +189,7 @@ autocmd FileType html set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType jinja set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType css set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType yaml,jade set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType java set tabstop=2 shiftwidth=2 expandtab ai
 
 " Makefile 不使用空格替换tab
 autocmd FileType make set noexpandtab ai
