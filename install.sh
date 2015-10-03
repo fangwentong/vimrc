@@ -91,7 +91,7 @@ install_plugins() {
 }
 
 javascript_tern_config() {
-    cd ~/.vim/bundle/tern_for_vim && npm install
+    cd ~/.vim/bundle/tern_for_vim && sudo npm install
     ln -sf $BASE_DIR/conf/tern-project $HOME/.tern-project
 }
 
