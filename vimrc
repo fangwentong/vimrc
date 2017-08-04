@@ -185,11 +185,13 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType coffee set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType json set tabstop=2 shiftwidth=2 expandtab ai
-autocmd FileType html set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType jinja set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType css set tabstop=2 shiftwidth=2 expandtab ai
 autocmd FileType yaml,jade set tabstop=2 shiftwidth=2 expandtab ai
-autocmd FileType java set tabstop=2 shiftwidth=2 expandtab ai
+
+autocmd FileType java set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType html set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType xml set tabstop=4 shiftwidth=4 expandtab ai
 
 " Makefile 不使用空格替换tab
 autocmd FileType make set noexpandtab ai
@@ -441,13 +443,13 @@ if has("gui_running")
     set t_Co=256
 endif
 
-colorscheme solarized
-set background=dark
-set t_Co=256
+" colorscheme solarized
+" set background=dark
+" set t_Co=256
 
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 " colorscheme tomorrow
 " colorscheme tomorrow-night
