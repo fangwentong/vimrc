@@ -11,7 +11,7 @@ install_mac_os() {
     npm install jshint -g
     npm install jslint -g
 
-    brew install vim ctags
+    brew install vim ctags cmake
     brew install tmux
 }
 
