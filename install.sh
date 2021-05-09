@@ -4,6 +4,7 @@ BASE_DIR=`pwd`
 TODAY=`date +%Y%m%d%H%M%S`
 
 install_mac_os() {
+    brew install python@2
     brew install python
     pip install pyflakes pylint pep8
 
@@ -13,6 +14,8 @@ install_mac_os() {
 
     brew install vim ctags cmake
     brew install tmux
+
+    brew install cmake
 }
 
 install_debain() {
@@ -51,8 +54,7 @@ install_fedora() {
 
 install_vim() {
     echo "\033[034m* Installing vim...\033[0m"
-    SYSTEM=`uname -s`
-    if [ $SYSTEM = "Darwin" ]
+    if [ "$(uname -s)" = "Darwin" ]
     then
         install_mac_os
     elif [ `which apt-get` ]
@@ -105,7 +107,8 @@ plugins_configure() {
 compile_ycm() {
     echo "\033[034m* Compiling YouCompleteMe...\033[0m"
     cd $BASE_DIR/bundle/YouCompleteMe/
-    if [ `which clang` ]    #Check system clang
+    # ycmd not compatible with libclang on latest mac
+    if [ `which clang`] && [ "$(uname -s)" != "Darwin" ]    #Check system clang
     then
         bash -x install.sh --clang-completer --system-libclang # use system clang
     else
