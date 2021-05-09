@@ -9,8 +9,7 @@ install_mac_os() {
     pip install pyflakes pylint pep8
 
     brew install node
-    npm install jshint -g
-    npm install jslint -g
+    npm install jshint jslint -g
 
     brew install vim ctags cmake
     brew install tmux
@@ -21,29 +20,12 @@ install_mac_os() {
 install_debain() {
     sudo apt-get install -y clang cmake build-essential 2>> err.log
 
-    # 解决Ubuntu 14.04编译YCM时找不到libclang.so的问题
-    for CLANG_VERSION in 4.2 4.1 4.0 3.9 3.8 3.7 3.6 3.5 3.4 3.3 3.2 3.1 3.0
-    do
-        if [ ! -e /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so ] && [ -e /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so.1 ]
-        then
-            sudo ln -sf /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so.1 /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so
-            break
-        elif [ -L /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so ]
-        then
-            sudo unlink /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so
-            sudo ln -sf /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so.1 /usr/lib/llvm-$CLANG_VERSION/lib/libclang.so
-            break
-        fi
-    done
-
     sudo apt-get install -y vim ctags 2>> err.log
-    sudo apt-get install -y python-dev python-setuptools 2>> err.log
-    sudo easy_install pip
+    sudo apt-get install -y python-dev python-setuptools python-pip 2>> err.log
     sudo pip install pyflakes pylint pep8
 
-    sudo apt-get install -y nodejs-legacy npm 2>> err.log
-    sudo npm install jslint -g
-    sudo npm install jshint -g
+    sudo apt-get install -y nodejs npm 2>> err.log
+    sudo npm install jslint jshint -g
 }
 
 install_fedora() {
