@@ -90,7 +90,7 @@ compile_ycm() {
     echo "\033[034m* Compiling YouCompleteMe...\033[0m"
     cd $BASE_DIR/bundle/YouCompleteMe/
     # ycmd not compatible with libclang on latest mac
-    if [ `which clang`] && [ "$(uname -s)" != "Darwin" ]    #Check system clang
+    if [ `which clang` ] && [ "$(uname -s)" != "Darwin" ]    #Check system clang
     then
         bash -x install.sh --clang-completer --system-libclang # use system clang
     else
