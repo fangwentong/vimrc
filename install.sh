@@ -20,7 +20,8 @@ install_mac_os() {
 install_debain() {
     sudo apt-get install -y clang cmake build-essential 2>> err.log
 
-    sudo apt-get install -y vim ctags 2>> err.log
+    sudo apt-get install -y vim 2>> err.log
+    sudo apt-get install -y exuberant-ctags 2>> err.log
     sudo apt-get install -y python-dev python-setuptools python-pip 2>> err.log
     sudo pip install pyflakes pylint pep8
 
