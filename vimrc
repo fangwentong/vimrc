@@ -45,8 +45,8 @@ if has('persistent_undo')
   set undodir=/tmp/vimundo
 endif
 
-set cursorcolumn            " 突出显示当前行等 不喜欢这种定位可注解
-set cursorline              " 突出显示当前行
+"set cursorcolumn            " 突出显示当前行等 不喜欢这种定位可注解
+"set cursorline              " 突出显示当前行
 
 
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -356,15 +356,6 @@ func! SetTitle ()
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"#coding=utf-8")
         call append(line(".")+1, "")
-"    else
-        "call setline(1,          "/*************************************************************************")
-        "call append(line("."),   "      > File Name: ".expand("%"))
-        "call append(line(".")+1, "      > Author: 房文同")
-        "call append(line(".")+2, "      > Mail: fangwentong2012@gmail.com")
-        "call append(line(".")+3, "      > Encoding:  utf-8")
-        "call append(line(".")+4, "      > Created Time: ".strftime("%c"))
-        "call append(line(".")+5, " ************************************************************************/")
-        "call append(line(".")+6, "")
     endif
     if &filetype == 'cpp'
         call setline(1, "#include<iostream>")
